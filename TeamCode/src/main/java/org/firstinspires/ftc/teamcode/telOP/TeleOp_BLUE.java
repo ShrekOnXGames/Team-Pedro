@@ -8,8 +8,8 @@ import org.firstinspires.ftc.teamcode.OpModeStorage;
 import org.firstinspires.ftc.teamcode.pedro.Constants;
 import com.pedropathing.drivetrain.DrivePowers;
 import com.pedropathing.follower.ManualDrive;
-@TeleOp(name = "TeleOp")
-public class TeleOp_Mode extends OpMode {
+@TeleOp(name = "BLUE_TeleOp")
+public class TeleOp_BLUE extends OpMode {
     private Follower follower;
 
     @Override

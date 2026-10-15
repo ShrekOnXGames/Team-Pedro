@@ -6,6 +6,7 @@ import com.pedropathing.follower.Follower;
 
 import org.firstinspires.ftc.teamcode.OpModeStorage;
 import org.firstinspires.ftc.teamcode.pedro.Constants;
+
 import com.pedropathing.api.PoseFactory;
 import com.pedropathing.math.Pose;
 import static com.pedropathing.api.Paths.*;
@@ -14,24 +15,23 @@ import com.pedropathing.ivy.Scheduler;
 import static com.pedropathing.ivy.Scheduler.schedule;
 import static com.pedropathing.ivy.pedro.PedroCommands.follow;
 import com.pedropathing.ivy.Command;
-import com.pedropathing.ivy.Scheduler;
 
 import static com.pedropathing.ivy.Scheduler.schedule;
 import static com.pedropathing.ivy.groups.Groups.sequential;
-import static com.pedropathing.ivy.pedro.PedroCommands.follow;
-@Autonomous
-public class ExampleAuto extends OpMode {
+
+@Autonomous (preselectTeleOp="BLUE_TeleOp")
+public class BLUE_RIGHT extends OpMode {
 
     private Follower follower;
     private final PoseFactory p = PoseFactory.degrees();
-    private final Pose startPose = p.of(55, 8.25, 90);
-    private final Pose park = p.of(17.5, 90.1742857142857, 180);
+    private final Pose startPose = p.of(85.52357142857142, 132.16357142857143, -90);
+    private final Pose park = p.of(126.01928571428569, 51.160714285714256, 0);
     //poses from before
     private Path park() {
         return curve(startPose, controlPose, park).linear(startPose, park);
     }
     // other poses...
-    private final Pose controlPose = p.of(21.409285714285733, 77.40714285714284, 150);
+    private final Pose controlPose = p.of(120, 89, -40);
     private Command autoRoutine() {
         return sequential(
                 follow(follower, park())
